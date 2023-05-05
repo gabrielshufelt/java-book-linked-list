@@ -79,7 +79,8 @@ public class BookList {
 			e.printStackTrace();
 		}
 	}
-
+	
+	// inserts Book b before the record which contains the isbn that is passed in (if it exists).
 	public boolean insertBefore(long isbn, Book b) {
 		Node previous = null;
 		Node current = head;
@@ -102,7 +103,8 @@ public class BookList {
 
 		return isbnExists;
 	}
-
+	
+	// inserts Book b between 2 consecutive records with attributes isbn1, and isbn2, respectively (if they exist).
 	public boolean insertBetween(long isbn1, long isbn2, Book b) {
 		Node current = head;
 		Boolean isbnsExists = false;
@@ -151,7 +153,7 @@ public class BookList {
 		System.out.println("===> head");
 	}
 	
-	//extract authors method
+	// method returns a booklist that contains exclusively records from the specified author.
 	public BookList extractAuthList(String aut) {
 		Node header = head;
 		BookList bL = new BookList();
@@ -166,7 +168,8 @@ public class BookList {
 		return bL;
 	}
 	
-	//swap method
+	// methods swaps 2 records; one with isbn1, and the other with isbn2 (if they exist).
+	// it swaps their position within the linked list.
 	public boolean swap(long isbn1, long isbn2) {		
 		Node current1 = null;
 		Node current2 = null;
@@ -215,7 +218,6 @@ public class BookList {
 		return swap;
 	}
 	
-	//comit method
 	public void commit() {
 		Node header = head;
 		String fileName = "Update_Books.txt";
