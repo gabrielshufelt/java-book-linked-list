@@ -38,8 +38,7 @@ public class BookList {
 		if (head == null) {
 			addToStart(b);
 		} else {
-			// traverse book list until the current next item (or before last item of the
-			// list) is null,
+			// traverse book list until the current next item (or before last item of the list) is null,
 			// and link a new node after that item, pointing to the book b
 			Node current = head;
 			while (current.next != null) {
@@ -50,12 +49,9 @@ public class BookList {
 	}
 
 	public void storeRecordsByYear(int yr) {
-		// method traverses book list and if the current the year of the book found in
-		// the current node
-		// is equal to the year passed in as the parameter, the yearExists variable is
-		// true and the
-		// current book is added to a temporary book ArrayList. The ArrayList is later
-		// used to write
+		// method traverses book list and if the current the year of the book found in the current node
+		// is equal to the year passed in as the parameter, the yearExists variable is true and the
+		// current book is added to a temporary book ArrayList. The ArrayList is later used to write
 		// to the year.txt file (created only if yearExists == true)
 		String fileName = Integer.toString(yr) + ".txt";
 		Boolean yearExists = false;
@@ -132,11 +128,9 @@ public class BookList {
 			current = current.next;
 
 			// if the previous record is equal to the current record, method returns true to
-			// indicate that consecutive records have been deleted. If two consecutive equal
-			// records
-			// have been found, the method is called recursively in the case that there are
-			// more than
-			// 2 equal consecutive records
+			// indicate that consecutive records have been deleted. If two consecutive equal records
+			// have been found, the method is called recursively in the case that there are more than
+			// 2 equal consecutive records.
 
 			if (previous.b.equals(current.b)) {
 				delRecords = true;
